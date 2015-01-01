@@ -1,0 +1,24 @@
+<a href="#/new" class="btn btn-primary"> New Work </a>
+<hr />
+<table class='table stripped'> 
+	<thead> 
+		<tr> 
+			<th>title</th> 
+			<th>Image (URL)</th> 
+			<th>Decription</th> 
+			<th>tags</th> 
+			<th></th> 
+		</tr> 
+	</thead> 
+	<tbody> 	
+		<% _.each(works, function(work) { %>
+			<tr>
+				<td><%= work.get('title') %></td>
+				<td><%= work.get('pathImage') %></td>
+				<td><%= work.get('workText') %></td>
+				<td><%= work.get('workTags') %></td>
+				<td><a href="#/edit/<%= work.id %>" class="btn">Edit</a></td>
+			</tr>
+		<% }) %>		
+	</tbody> 
+</table>

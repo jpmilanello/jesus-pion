@@ -1,0 +1,28 @@
+<form class="edit-work-form">
+	<legend><%= work ? 'Update' : 'Create' %> Work</legend>
+	<p>
+		<label>Title</label>
+		<input type="text" name="title" value="<%= work ? work.get('title') : '' %>"/>
+	</p>
+	<p>
+		<label>Image</label>
+		<input type="text" name="pathImage" value="<%= work ? work.get('pathImage') : '' %>"/>
+	</p>
+	<p>
+		<label>Description</label>
+		<input type="text" name="workText" value="<%= work ? work.get('workText') : '' %>"/>
+	</p>
+	<p>
+		<label>Tags</label>
+		<input type="text" name="workTags" value="<%= work ? work.get('workTags') : '' %>"/>
+	</p>
+	<hr />
+	<Button type="submit" class="btn"><%= work ? 'Update' : 'Create' %></Button>
+	<% if(work){ %>
+		<input type="hidden" name="id" value="<%= work.id %>"/>
+		<Button type="button" class="btn btn-danger delete-work">Delete</Button>
+	<% }else{ %>
+		<a href="" class="btn btn-danger">Back</a>
+	<% }; %>
+	
+</form>

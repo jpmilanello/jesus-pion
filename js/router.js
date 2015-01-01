@@ -4,7 +4,7 @@ define([
   'underscore',
   'backbone',
   'views/works/list',
-  'views/works/edit'
+  'views/works/edit',
 ], function($, _, Backbone, WorkList,EditWork){
   var Router = Backbone.Router.extend({
     routes: {

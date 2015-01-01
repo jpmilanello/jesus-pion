@@ -8,5 +8,5 @@ define([
   		model: WorkModel,
   		url: '/works'
   	});
-  	return Questions;
+  	return Works;
 });

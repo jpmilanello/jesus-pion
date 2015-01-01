@@ -44,7 +44,7 @@ define([
 			work.save(worksDetails,{
 				success: function () {
 					/* Trigger home page refresh */
-					Backbone.history.navigate('',{trigger: true});
+					Backbone.history.navigate('#/work',{trigger: true});
 				}
 			});
 			return false;
@@ -54,7 +54,7 @@ define([
 			this.work.destroy({
 				success: function () {
 					/* Trigger home page refresh */
-					Backbone.history.navigate('',{trigger: true});
+					Backbone.history.navigate('#/work',{trigger: true});
 				}
 			});
 			return false;

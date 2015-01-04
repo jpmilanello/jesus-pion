@@ -1,3 +1,102 @@
+.container-fluid, .row {
+  margin: 0;
+  padding: 0; }
 
+header {
+  height: 80px;
+  position: relative;
+  width: 100%; }
+  header img {
+    -webkit-transform: translate(0, -50%);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(0, -50%);
+    /* IE 9 */
+    -ms-transform: translate(0, -50%);
+    /* IE 9 */
+    transform: translate(0, -50%);
+    position: absolute;
+    top: 50%; }
+  header nav {
+    -webkit-transform: translate(0, -50%);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(0, -50%);
+    /* IE 9 */
+    -ms-transform: translate(0, -50%);
+    /* IE 9 */
+    transform: translate(0, -50%);
+    position: absolute;
+    top: 50%; }
+    header nav ul {
+      margin: 0;
+      padding: 0; }
+      header nav ul li {
+        color: #4CC393;
+        display: inline-block;
+        font-size: 38px;
+        list-style: none;
+        padding: 0 11px; }
+
+#section-home {
+  background: url("../img/code-back.png") no-repeat;
+  background-size: 100%;
+  height: 570px;
+  margin-top: -80px;
+  padding-top: 80px;
+  position: relative;
+  width: 100%; }
+  #section-home article {
+    -webkit-transform: translate(0, -50%);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(0, -50%);
+    /* IE 9 */
+    -ms-transform: translate(0, -50%);
+    /* IE 9 */
+    transform: translate(0, -50%);
+    position: absolute;
+    top: 50%;
+    width: 100%; }
+    #section-home article p {
+      -webkit-transform: translate(-50%, 0);
+      /* Chrome, Safari, Opera */
+      -moz-transform: translate(-50%, 0);
+      /* IE 9 */
+      -ms-transform: translate(-50%, 0);
+      /* IE 9 */
+      transform: translate(-50%, 0);
+      color: #555;
+      font-size: 34px;
+      left: 50%;
+      position: relative;
+      text-align: center;
+      width: 50%; }
+    #section-home article .circle {
+      -webkit-border-radius: 50%;
+      /* Chrome, Safari, Opera */
+      -moz-border-radius: 50%;
+      /* IE 9 */
+      -ms-border-radius: 50%;
+      /* IE 9 */
+      border-radius: 50%;
+      -webkit-transform: translate(-50%, 0);
+      /* Chrome, Safari, Opera */
+      -moz-transform: translate(-50%, 0);
+      /* IE 9 */
+      -ms-transform: translate(-50%, 0);
+      /* IE 9 */
+      transform: translate(-50%, 0);
+      left: 50%;
+      position: relative;
+      width: 180px;
+      overflow: hidden; }
+
+#orange-round {
+  height: 87px;
+  position: absolute;
+  top: 484px;
+  right: 0; }
+
+#section-about {
+  background: #FF3F00;
+  height: 570px; }
 
 /*# sourceMappingURL=default.css.map */

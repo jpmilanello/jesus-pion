@@ -1,0 +1,101 @@
+$primary-color: #FF3F00;
+$secundary-color: #555;
+$alternative-color: #4CC393;
+
+@mixin border($color,$width) {
+  border: #{$width}px solid #{$color};
+}
+
+@mixin translate($tx,$ty){
+    -webkit-transform: translate($tx,$ty); /* Chrome, Safari, Opera */
+    -moz-transform: translate($tx,$ty); /* IE 9 */
+    -ms-transform: translate($tx,$ty); /* IE 9 */
+    transform: translate($tx,$ty);
+}
+
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius; /* Chrome, Safari, Opera */
+    -moz-border-radius: $radius; /* IE 9 */
+    -ms-border-radius: $radius; /* IE 9 */
+    border-radius: $radius;
+}
+
+.container-fluid,.row{
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	height: 80px;
+	position: relative;
+	width: 100%;
+	img{
+		@include translate(0,-50%);
+		position: absolute;
+		top: 50%;
+	}
+	nav{
+		@include translate(0,-50%);
+		position: absolute;
+		top: 50%;
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				color: $alternative-color;
+				display: inline-block;
+				font-size: 38px;
+				list-style: none;
+				padding: 0 11px;
+			}
+		}
+	}
+}
+
+#section-home{
+	background: url("../img/code-back.png") no-repeat;
+	background-size: 100%;
+	height: 570px;
+	margin-top: -80px; 
+	padding-top: 80px;
+	position: relative;
+	width: 100%;
+	article{
+		@include translate(0,-50%);
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		p{
+			@include translate(-50%,0);
+			color: $secundary-color;
+			font-size: 34px;
+			left: 50%;
+			position: relative;	
+			text-align: center;
+			width: 50%;
+		}
+		.circle{
+			@include border-radius(50%);
+			@include translate(-50%,0);
+			left: 50%;
+			position: relative;	
+			width: 180px;
+			overflow: hidden;
+			img{
+
+			}
+		}
+	}
+	
+}
+
+#orange-round{
+	height: 87px;
+	position: absolute;
+	top: 570px - 87px + 1px;
+	right: 0;
+}
+#section-about{
+	background: $primary-color;
+	height: 570px;
+}

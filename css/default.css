@@ -76,6 +76,7 @@ header {
   background: url("../img/code-back.png") no-repeat;
   background-size: 100%;
   height: 380px;
+  margin-top: 50px;
   position: relative;
   width: 100%; }
   #section-home article {
@@ -255,15 +256,16 @@ footer {
         height: 50px;
         width: 190px; }
     header nav ul li {
-      font-size: 38px; }
+      font-size: 30px; }
     header.fixed {
       height: 60px; }
 
   #section-home {
-    height: 570px; }
+    height: 480px;
+    margin: 0; }
     #section-home article p {
       width: 50%;
-      font-size: 34px; }
+      font-size: 28px; }
     #section-home article .circle {
       width: 180px; }
       #section-home article .circle img {
@@ -271,7 +273,7 @@ footer {
 
   #orange-round {
     height: 87px;
-    top: 484px; }
+    top: 394px; }
 
   #section-about p.article-text {
     font-size: 27px;

@@ -11,11 +11,11 @@ define([
       var fixScrollBound = 10; 
       //define limits acoording to html width
       if(documentWidth <= 768){
-        var aboutScrollBound = 380 - 40;
-        var worksScrollBound = 380 + 380 - 40;
+        var aboutScrollBound = 380 + 50 - 40;
+        var worksScrollBound = 380 + 380 + 50 - 40;
       }else{
-        var aboutScrollBound = 570 - 60;
-        var worksScrollBound = 570 + 380 - 60;
+        var aboutScrollBound = 480 - 60;
+        var worksScrollBound = 480 + 380 - 60;
       }                
       if(yScroll > fixScrollBound) {
         $('header').addClass('fixed');

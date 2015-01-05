@@ -107,6 +107,7 @@ header{
 	background: url("../img/code-back.png") no-repeat;
 	background-size: 100%;
 	height: 380px;
+	margin-top: 50px;
 	position: relative;
 	width: 100%;
 	article{
@@ -255,7 +256,7 @@ footer{
 		nav{
 			ul{
 				li{
-					font-size: 38px;
+					font-size: 30px;
 				}
 			}
 		}
@@ -264,11 +265,12 @@ footer{
 		}
 	}
 	#section-home{
-		height: 570px;
+		height: 480px;
+		margin: 0;
 		article{
 			p{
 				width: 50%;
-				font-size: 34px; 
+				font-size: 28px; 
 			}
 			.circle{
 				width: 180px;
@@ -280,7 +282,7 @@ footer{
 	}
 	#orange-round{
 		height: 87px;
-		top: 570px - 87px + 1px;
+		top: 480px - 87px + 1px;
 	}
 	#section-about{
 		p.article-text{

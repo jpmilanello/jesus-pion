@@ -7,8 +7,18 @@ body {
   position: relative; }
 
 header {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation: fadeDown .25s ease .25s forwards;
+  -moz-animation: fadeDown .25s ease  .25s forwards;
+  -ms-animation: fadeDown .25s ease  .25s forwards;
+  -o-animation: fadeDown .25s ease  .25s forwards;
+  animation: fadeDown .25s ease  .25s forwards;
   height: 50px;
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: 2; }
   header div {
@@ -44,11 +54,23 @@ header {
       margin: 0;
       padding: 0; }
       header nav ul li {
-        color: #4CC393;
         display: inline-block;
         font-size: 20px;
         list-style: none;
         padding: 0 11px; }
+        header nav ul li a {
+          color: #4CC393; }
+        header nav ul li a:hover {
+          color: #4CC393;
+          text-decoration: none; }
+  header.fixed {
+    background: rgba(0, 0, 0, 0.5);
+    height: 40px;
+    position: fixed; }
+    header.fixed nav ul li a {
+      color: #FFF; }
+      header.fixed nav ul li a.selected {
+        color: #4CC393; }
 
 #section-home {
   background: url("../img/code-back.png") no-repeat;
@@ -234,11 +256,11 @@ footer {
         width: 190px; }
     header nav ul li {
       font-size: 38px; }
+    header.fixed {
+      height: 60px; }
 
   #section-home {
-    height: 570px;
-    margin-top: -80px;
-    padding-top: 80px; }
+    height: 570px; }
     #section-home article p {
       width: 50%;
       font-size: 34px; }

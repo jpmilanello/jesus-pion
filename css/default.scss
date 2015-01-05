@@ -20,6 +20,22 @@ $alternative-color: #4CC393;
     border-radius: $radius;
 }
 
+@mixin transition{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+@mixin animation{
+    -webkit-animation: fadeDown .25s ease .25s forwards;
+    -moz-animation: fadeDown .25s ease  .25s forwards;
+    -ms-animation: fadeDown .25s ease  .25s forwards;
+    -o-animation: fadeDown .25s ease  .25s forwards;
+    animation: fadeDown .25s ease  .25s forwards;
+}
+
 .container-fluid,.row{
 	margin: 0;
 	padding: 0;
@@ -31,8 +47,10 @@ body{
 }
 
 header{
+	@include transition;
+	@include animation;
 	height: 50px;
-	position: relative;
+	position: absolute;
 	width: 100%;
 	z-index: 2;
 	div{
@@ -58,11 +76,28 @@ header{
 			margin: 0;
 			padding: 0;
 			li{
-				color: $alternative-color;
+				a{
+					color: $alternative-color;
+				}	
+				a:hover{
+					color: $alternative-color;
+					text-decoration: none;
+				}		
 				display: inline-block;
 				font-size: 20px;
 				list-style: none;
 				padding: 0 11px;
+			}
+		}
+	}
+	&.fixed{
+		background: rgba(0,0,0,0.5);
+		height: 40px;
+		position: fixed;
+		nav ul li a{
+			color: #FFF;
+			&.selected{
+				color: $alternative-color;
 			}
 		}
 	}
@@ -224,11 +259,12 @@ footer{
 				}
 			}
 		}
+		&.fixed{
+			height: 60px;
+		}
 	}
 	#section-home{
 		height: 570px;
-		margin-top: -80px; 
-		padding-top: 80px;
 		article{
 			p{
 				width: 50%;

@@ -20,7 +20,7 @@ header {
   height: 50px;
   position: absolute;
   width: 100%;
-  z-index: 2; }
+  z-index: 5; }
   header div {
     -webkit-transform: translate(0, -50%);
     /* Chrome, Safari, Opera */
@@ -220,7 +220,7 @@ header {
     display: none; }
 
 #white-round {
-  bottom: 211px;
+  bottom: 241px;
   height: 40px;
   left: 0;
   position: absolute;
@@ -228,9 +228,9 @@ header {
 
 footer {
   background: #555;
-  height: 250px;
+  height: 280px;
   position: relative; }
-  footer img {
+  footer #bottom-logo {
     -webkit-transform: translate(-50%, -50%);
     /* Chrome, Safari, Opera */
     -moz-transform: translate(-50%, -50%);
@@ -240,8 +240,61 @@ footer {
     transform: translate(-50%, -50%);
     left: 50%;
     position: absolute;
-    top: 50%;
-    width: 140px; }
+    top: calc(50% - 50px);
+    width: 80px; }
+  footer p {
+    bottom: 0;
+    color: #FFF;
+    position: absolute;
+    width: 100%;
+    text-align: center; }
+  footer span {
+    -webkit-transform: translate(-50%, 0);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(-50%, 0);
+    /* IE 9 */
+    -ms-transform: translate(-50%, 0);
+    /* IE 9 */
+    transform: translate(-50%, 0);
+    bottom: 90px;
+    color: #FFF;
+    font-size: 20px;
+    position: absolute;
+    left: 50%; }
+  footer ul {
+    -webkit-transform: translate(-50%, 0);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(-50%, 0);
+    /* IE 9 */
+    -ms-transform: translate(-50%, 0);
+    /* IE 9 */
+    transform: translate(-50%, 0);
+    bottom: 30px;
+    padding: 0;
+    position: absolute;
+    left: 50%; }
+    footer ul li {
+      display: inline-block;
+      height: 40px;
+      list-style: none;
+      position: relative;
+      width: 40px; }
+      footer ul li div {
+        -webkit-border-radius: 50%;
+        /* Chrome, Safari, Opera */
+        -moz-border-radius: 50%;
+        /* IE 9 */
+        -ms-border-radius: 50%;
+        /* IE 9 */
+        border-radius: 50%;
+        background: #FFF;
+        display: none;
+        height: 40px;
+        width: 40px;
+        position: absolute; }
+      footer ul li img {
+        position: absolute;
+        width: 40px; }
 
 @media (max-width: 585px) {
   #section-works article p {
@@ -285,7 +338,33 @@ footer {
     display: inline-block; }
 
   #white-round {
-    bottom: 164px;
-    height: 87px; } }
+    bottom: 194px;
+    height: 87px; }
+
+  footer #bottom-logo {
+    top: calc(50% - 15px);
+    width: 140px; }
+  footer span {
+    -webkit-transform: translate(0, 0);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(0, 0);
+    /* IE 9 */
+    -ms-transform: translate(0, 0);
+    /* IE 9 */
+    transform: translate(0, 0);
+    bottom: 230px;
+    left: auto;
+    right: 80px; }
+  footer ul {
+    -webkit-transform: translate(0, 0);
+    /* Chrome, Safari, Opera */
+    -moz-transform: translate(0, 0);
+    /* IE 9 */
+    -ms-transform: translate(0, 0);
+    /* IE 9 */
+    transform: translate(0, 0);
+    bottom: 160px;
+    left: auto;
+    right: 50px; } }
 
 /*# sourceMappingURL=default.css.map */

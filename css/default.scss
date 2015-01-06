@@ -52,7 +52,7 @@ header{
 	height: 50px;
 	position: absolute;
 	width: 100%;
-	z-index: 2;
+	z-index: 5;
 	div{
 		@include translate(0,-50%);
 		height: 30px;
@@ -213,7 +213,7 @@ header{
 }
 
 #white-round{
-	bottom: 250px - 40px + 1px;
+	bottom: 280px - 40px + 1px;
 	height: 40px;
 	left: 0;
 	position: absolute;	
@@ -222,14 +222,55 @@ header{
 
 footer{
 	background: $secundary-color;
-	height: 250px;
+	height: 280px;
 	position: relative;
-	img{
+	#bottom-logo{
 		@include translate(-50%,-50%);
 		left: 50%;
 		position: absolute;
-		top: 50%;
-		width: 140px;
+		top: calc(50% - 50px);
+		width: 80px;
+	}
+	p{
+		bottom: 0;
+		color: #FFF;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+	}
+	span{
+		@include translate(-50%,0);
+		bottom: 90px;
+		color: #FFF;
+		font-size: 20px;
+		position: absolute;
+		left: 50%;
+	}
+	ul{
+		@include translate(-50%,0);
+		bottom: 30px;
+		padding: 0;
+		position: absolute;
+		left: 50%;
+		li{
+			display: inline-block;
+			height: 40px;
+			list-style: none;	
+			position: relative;
+			width: 40px;
+			div{
+				@include border-radius(50%);
+				background: #FFF;
+				display: none;
+				height: 40px;
+				width: 40px;
+				position: absolute;
+			}
+			img{
+				position: absolute;
+				width: 40px;
+			}
+		}
 	}
 }
 
@@ -299,7 +340,25 @@ footer{
 		}
 	}
 	#white-round{
-		bottom: 250px - 87px + 1px;
+		bottom: 280px - 87px + 1px;
 		height: 87px;
+	}
+	footer{
+		#bottom-logo{
+			top: calc(50% - 15px);
+			width: 140px;
+		}
+		span{
+			@include translate(0,0);
+			bottom: 230px;
+			left: auto;
+			right: 80px;
+		}
+		ul{
+			@include translate(0,0);
+			bottom: 160px;
+			left: auto;
+			right: 50px;
+		}
 	}
 }

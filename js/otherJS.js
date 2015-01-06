@@ -1,6 +1,7 @@
 define([
   'jquery',
-], function($){
+  'hoverIntent'
+], function($,HoverIntent){
     //look for window scroll
     $(window).on('scroll', function() {
       //get width of HTML
@@ -33,5 +34,43 @@ define([
         $('header nav ul li:nth-child(3) a').addClass('selected');
       }
     });
+    $('#social-media li a img').hoverIntent(
+      function () {
+        var src = $(this).attr("src");
+        src = src.split("-alpha");
+        var new_src = src[0] + src[1];
+        $(this).animate(
+          {rotation: 360},
+          { duration: 300,
+            step: function(now, fx) {
+              $(this).css({"-webkit-transform": "rotate("+now+"deg)",
+                           "-moz-transform": "rotate("+now+"deg)",
+                           "-ms-transform": "rotate("+now+"deg)",
+                           "transform": "rotate("+now+"deg)"});
+              $(this).parent().parent().children('div').css({display:"block"});
+              $(this).attr("src",new_src);
+            }
+          }
+        );
+      }, function () {
+        var src = $(this).attr("src");
+        src = src.split(".png");
+        var new_src = src[0] + "-alpha.png";
+        $(this).attr("src",new_src);
+        $(this).animate(
+          {rotation: 0},
+          { duration: 300,
+            step: function(now, fx) {
+              $(this).css({"-webkit-transform": "rotate("+now+"deg)",
+                           "-moz-transform": "rotate("+now+"deg)",
+                           "-ms-transform": "rotate("+now+"deg)",
+                           "transform": "rotate("+now+"deg)"});
+              $(this).parent().parent().children('div').css({display:"none"});
+              $(this).attr("src",new_src);
+            }
+          }
+        );
+      }
+    )
 });
 

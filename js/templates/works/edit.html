@@ -6,7 +6,7 @@
 	</p>
 	<p>
 		<label>Image</label>
-		<input type="text" name="pathImage" value="<%= work ? work.get('pathImage') : '' %>"/>
+		 <input type="file" name="pahtImage" accept="image/*">
 	</p>
 	<p>
 		<label>Description</label>
@@ -22,7 +22,7 @@
 		<input type="hidden" name="id" value="<%= work.id %>"/>
 		<Button type="button" class="btn btn-danger delete-work">Delete</Button>
 	<% }else{ %>
-		<a href="" class="btn btn-danger">Back</a>
+		<a href="#/work" class="btn btn-danger">Back</a>
 	<% }; %>
 	
 </form>

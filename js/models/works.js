@@ -1,9 +1,11 @@
 define([
   'underscore',
-  'backbone'
-], function(_, Backbone){
+  'backbone',
+  'modelFileUpload',
+], function(_, Backbone,ModelFileUpload){
     var Work = Backbone.Model.extend({
-      urlRoot: '/works'
+      urlRoot: '/works',
+      fileAttribute: 'image'
     });
     // Return the model for the module
     return Work;

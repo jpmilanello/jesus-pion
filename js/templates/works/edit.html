@@ -1,4 +1,4 @@
-<form class="edit-work-form">
+<form class="edit-work-form"  enctype="multipart/form-data">
 	<legend><%= work ? 'Update' : 'Create' %> Work</legend>
 	<p>
 		<label>Title</label>
@@ -6,7 +6,10 @@
 	</p>
 	<p>
 		<label>Image</label>
-		 <input type="file" name="pahtImage" accept="image/*">
+		<span class="btn btn-default btn-file">
+		    Browse <input type="file" name="pahtImage" accept="image/*">
+		</span>
+		 
 	</p>
 	<p>
 		<label>Description</label>

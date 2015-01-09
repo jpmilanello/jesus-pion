@@ -6,8 +6,9 @@ define([
   // which will be used as our views primary template
   'router',
   'models/works',
+  'modelFileUpload',
   'text!templates/works/edit.html'
-], function($, _, Backbone, Router, Work, editWorkTemplate){
+], function($, _, Backbone, Router, Work, ModelFileUpload, editWorkTemplate){
 	var EditWork = Backbone.View.extend({
 		/* HTML element for single page app */
 		el: '.page',
@@ -39,9 +40,13 @@ define([
 		},
 		/* Function to send the save request (POST if an id is not present, PUT if an id is present) to rest server */
 		saveWork: function (ev){
+			var picture = $('input[name="pahtImage"]')[0].files[0]; 
 			var worksDetails = $(ev.currentTarget).serializeObject();
+			//console.log(worksDetails);
+			//console.log(worksDetails);
 			var work = new Work();
-			work.save(worksDetails,{
+			work.set('image',picture);
+			work.save(worksDetails,{ formData: true,
 				success: function () {
 					/* Trigger home page refresh */
 					Backbone.history.navigate('#/work',{trigger: true});

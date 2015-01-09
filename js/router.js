@@ -17,6 +17,7 @@ define([
 
   var initialize = function(){
   	$.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
+      //options.url = 'http://localhost:3000' + options.url;
   	  options.url = 'https://personalpageserver.herokuapp.com' + options.url;
   	});
 

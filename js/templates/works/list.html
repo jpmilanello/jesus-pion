@@ -11,10 +11,12 @@
 		</tr> 
 	</thead> 
 	<tbody> 	
-		<% _.each(works, function(work) { %>
+		<% _.each(works, function(work) { 
+			complex_id = ("000000000" + work.get('id')).substr(-9,9);
+			path = 'https://s3.amazonaws.com/personalpagejpmilanello/works/images/' + complex_id.substr(0,3) + '/' + complex_id.substr(3,3) + '/' + complex_id.substr(6,3) + '/original/' + work.get('image_file_name'); %>
 			<tr>
 				<td><%= work.get('workTitle') %></td>
-				<td><%= work.get('pathImage') %></td>
+				<td><img src="<%= path %>"></td>
 				<td><%= work.get('workText') %></td>
 				<td><%= work.get('workTags') %></td>
 				<td><a href="#/work/edit/<%= work.id %>" class="btn">Edit</a></td>

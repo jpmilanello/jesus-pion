@@ -3,7 +3,19 @@ require.config({
     jquery: 'libs/jquery/jquery',
     underscore: 'libs/underscore/underscore',
     backbone: 'libs/backbone/backbone',
-    hoverIntent: 'libs/hoverIntent/hoverIntent'
+    hoverIntent: 'libs/hoverIntent/hoverIntent',
+    modelFileUpload: 'libs/model-file-upload/model-file-upload'
+  },
+
+  shim: {
+    'backbone': {
+      deps: ['underscore'],
+      exports: 'Backbone'
+    },
+    modelFileUpload: {
+      deps: ['jquery', 'underscore', 'backbone'],
+      exports: 'Backbone'
+    }
   }
 
 });

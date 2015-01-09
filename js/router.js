@@ -3,9 +3,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'views/section-works/list',
   'views/works/list',
   'views/works/edit',
-], function($, _, Backbone, WorkList,EditWork){
+], function($, _, Backbone, SectionWorkList, WorkList,EditWork){
   var Router = Backbone.Router.extend({
     routes: {
       	'': 'home',
@@ -38,12 +39,13 @@ define([
   	};
   	/* initialize views*/
   	var workList = new WorkList();
+    var sectionWorkList = new SectionWorkList();
   	var editWork = new EditWork();
 
     var router = new Router();
-    // router.on('route:home', function () {
-    // 	questionList.render();
-    // });
+    router.on('route:home', function () {
+      sectionWorkList.render();
+    });
     router.on('route:homeWork', function () {
     	workList.render();
     });

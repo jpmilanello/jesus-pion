@@ -9,12 +9,16 @@ require.config({
 
   shim: {
     'backbone': {
-      deps: ['underscore'],
+      deps: ['jquery','underscore'],
       exports: 'Backbone'
     },
-    modelFileUpload: {
+    'hoverIntent': {
+      deps: ['jquery'],
+      exports: 'HoverIntent'
+    },
+    'modelFileUpload': {
       deps: ['jquery', 'underscore', 'backbone'],
-      exports: 'Backbone'
+      exports: 'ModelFileUpload'
     }
   }
 

@@ -21,9 +21,18 @@ define([
   					/* Load the html template with the data obtained. Each row is passed in JSON format */
   					var listTemplate = _.template(workListTemplate)({works: works.models});
   					element.$el.html(listTemplate);
+            var documentWidth = $(document).width();
+            $('.work-article:first-child').addClass('col-sm-offset-2 col-xs-offset-3');
+            if(documentWidth <= 768){
+              $('.work-article:nth-child(-n + 1)').removeClass('hide');
+              $('.work-article:nth-child(2)').removeClass('hide').addClass('rigth-side');
+            }else{
+              $('.work-article:nth-child(-n + 2)').removeClass('hide');
+              $('.work-article:nth-child(3)').removeClass('hide').addClass('rigth-side');
+            }
   				}
   			})		
-  		}
+  		},
   	});
   // Our module now returns our view
   return SectionWorkList;

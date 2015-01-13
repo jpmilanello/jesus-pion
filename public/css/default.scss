@@ -13,6 +13,27 @@ $alternative-color: #4CC393;
     transform: translate($tx,$ty);
 }
 
+@mixin rotateY($angle){
+    -webkit-transform: rotateY($angle); /* Chrome, Safari, Opera */
+    -moz-transform: rotateY($angle); /* IE 9 */
+    -ms-transform: rotateY($angle); /* IE 9 */
+    transform: rotateY($angle);
+}
+
+@mixin rotate($angle){
+    -webkit-transform: rotate($angle); /* Chrome, Safari, Opera */
+    -moz-transform: rotate($angle); /* IE 9 */
+    -ms-transform: rotate($angle); /* IE 9 */
+    transform: rotate($angle);
+}
+
+@mixin perspective($value){
+    -webkit-perspective: $value; /* Chrome, Safari, Opera */
+    -moz-perspective: $value; /* IE 9 */
+    -ms-perspective: $value; /* IE 9 */
+    perspective: $value;
+}
+
 @mixin border-radius($radius){
     -webkit-border-radius: $radius; /* Chrome, Safari, Opera */
     -moz-border-radius: $radius; /* IE 9 */
@@ -189,7 +210,6 @@ header{
 			color: $primary-color;
 		}
 		.circle{
-			
 			position: relative;	
 			height: 150px;
 			overflow: hidden;
@@ -208,8 +228,51 @@ header{
 		position: absolute;
 		top: 20px;
 	}
-	.work-article:last-child{
-		display: none;
+	.list-works{
+		overflow: hidden;
+		height: 380px;
+		/*padding-left: 33.333333%;*/
+		position: relative;
+		@include perspective(4000px);
+
+		.work-article{
+			@include transition;
+			display: inline-block;
+			position: relative;
+			vertical-align:top;
+			width: 50%;
+			top: 30px;
+			&.hide{
+				display: none;
+			}
+			&.left-side{
+				@include translate(50%,0%);
+				@include rotateY(50deg);
+				position: absolute;
+				left: -100px;
+				top: 20px;
+			}
+			&.rigth-side{
+				@include translate(50%,0%);
+				@include rotateY(-50deg);
+				position: absolute;
+				right: -100px;
+				top: 20px;
+			}
+		}
+	}
+	.works-nav{
+		cursor: pointer;
+		position: absolute;
+		top:50%;
+		width: 32px;
+	}
+	#backward{
+		left: 16.666666%;
+	}
+	#forward{
+		@include rotate(180deg);
+		right: 16.66666%;
 	}
 }
 
@@ -356,8 +419,22 @@ footer{
 		}
 	}
 	#section-works{
-		.work-article:last-child{
-			display: inline-block;
+		.list-works{
+			.work-article{
+				width: 33.333333%;
+				&.left-side{
+					left: -150px;
+				}
+				&.rigth-side{
+					right: -150px;
+				}
+			}
+		}
+		#backward{
+			left: 16.6666666%;
+		}
+		#forward{
+			right: 16.6666666%;
 		}
 	}
 	#white-round{

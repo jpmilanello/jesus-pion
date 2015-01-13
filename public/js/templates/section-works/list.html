@@ -1,7 +1,8 @@
 <%  _.each(works, function(work){
 	complex_id = ("000000000" + work.get('id')).substr(-9,9);
-	path = 'https://s3.amazonaws.com/personalpagejpmilanello/works/images/' + complex_id.substr(0,3) + '/' + complex_id.substr(3,3) + '/' + complex_id.substr(6,3) + '/original/' + work.get('image_file_name'); %>
-	<div class="col-sm-4 col-xs-6 work-article">
+	path = 'https://s3.amazonaws.com/personalpagejpmilanello/works/images/' + complex_id.substr(0,3) + '/' + complex_id.substr(3,3) + '/' + complex_id.substr(6,3) + '/original/' + work.get('image_file_name');
+	%>
+	<div class="col-sm-4 col-xs-6 work-article hide">
 		<p><strong><%= work.get('workTitle') %></strong> <%= work.get('workText') %></p>
 		<div class="circle">
 			<img src="<%= path %>">

@@ -34,17 +34,29 @@ define([
       if(yScroll > fixScrollBound) {
         $('header').addClass('fixed');
         $('header nav ul li a').removeClass('selected');
-        $('header nav ul li:nth-child(1) a').addClass('selected');
+        $('header nav ul li:nth-child(2) a').addClass('selected');
+        $('header nav ul li:nth-child(3) a').addClass('selected');
       }else{
         $('header').removeClass('fixed');
       }
       if(yScroll > aboutScrollBound) {  
         $('header nav ul li a').removeClass('selected');
-        $('header nav ul li:nth-child(2) a').addClass('selected');
+        $('header nav ul li:nth-child(4) a').addClass('selected');
+        $('header nav ul li:nth-child(5) a').addClass('selected');
       }
       if(yScroll > worksScrollBound) {
         $('header nav ul li a').removeClass('selected');
-        $('header nav ul li:nth-child(3) a').addClass('selected');
+        $('header nav ul li:nth-child(6) a').addClass('selected');
+        $('header nav ul li:nth-child(7) a').addClass('selected');
+      }
+    });
+    $('#language-change').click(function (){
+      if ($('.en:first-child').is(':visible')){
+        $('.en').css({display:"none"});
+        $('.sp').css({display:"inline-block"});
+      }else{
+        $('.en').css({display:"inline-block"});
+        $('.sp').css({display:"none"});
       }
     });
     $('#social-media li a img').hoverIntent(
@@ -84,7 +96,7 @@ define([
           }
         );
       }
-    )
+    );
     $(".works-nav").click(function (){
       order = this.id;
       //get width of HTML
@@ -100,7 +112,7 @@ define([
         indexPage += 1;
       }
       uploadPage(worksPerPage);
-    })
+    });
     $( window ).resize(function() {
       //get width of HTML
       var documentWidth = viewport().width;
@@ -124,7 +136,7 @@ define([
       $('.work-article:nth-child(' + ((indexPage + 1)*worksPerPage + 1) + ')').removeClass('hide').addClass('rigth-side');
       $('.work-article:nth-child(' + (indexPage*worksPerPage + 1) + ')').addClass('col-sm-offset-2 col-xs-offset-3');   
       $('.work-article:nth-child(n + ' +((indexPage + 1)*worksPerPage + 2) + ')').addClass('hide');
-    }
+    };
     function viewport(){
       var e = window
       , a = 'inner';
@@ -134,6 +146,6 @@ define([
       e = document.documentElement || document.body;
       }
       return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
-    }
+    };
 });
 

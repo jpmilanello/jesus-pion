@@ -295,6 +295,9 @@ header {
   position: absolute;
   z-index: 2; }
 
+.sp {
+  display: none; }
+
 footer {
   background: #555;
   height: 280px;

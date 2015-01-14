@@ -44,7 +44,7 @@ $alternative-color: #4CC393;
 }
 
 body{
-	min-width: 390px;
+	min-width: 320px;
 	position: relative;
 }
 
@@ -101,7 +101,7 @@ header{
 	&.fixed{
 		background: rgba(0,0,0,0.5);
 		height: 40px;
-		min-width: 390px;
+		min-width: 320px;
 		position: fixed;
 		nav {
 			ul li a{
@@ -353,7 +353,19 @@ footer{
     cursor: inherit;
     display: block;
 }
-
+@media(max-width:400px){
+	header {
+		nav{
+			li{
+				padding-left: 5px !important;
+				padding-right: 5px !important;
+			}
+			a{
+				font-size: 16px;
+			}
+		}
+	}
+}
 @media(max-width:585px){
 	#section-works{
 		article{

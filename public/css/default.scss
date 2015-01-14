@@ -7,54 +7,35 @@ $alternative-color: #4CC393;
 }
 
 @mixin translate($tx,$ty){
-    -webkit-transform: translate($tx,$ty); /* Chrome, Safari, Opera */
-    -moz-transform: translate($tx,$ty); /* IE 9 */
-    -ms-transform: translate($tx,$ty); /* IE 9 */
-    transform: translate($tx,$ty);
+    -webkit-transform: translate($tx,$ty);-moz-transform: translate($tx,$ty);-ms-transform: translate($tx,$ty);transform: translate($tx,$ty);
 }
 
 @mixin rotateY($angle){
-    -webkit-transform: rotateY($angle); /* Chrome, Safari, Opera */
-    -moz-transform: rotateY($angle); /* IE 9 */
-    -ms-transform: rotateY($angle); /* IE 9 */
-    transform: rotateY($angle);
+    -webkit-transform: rotateY($angle);-moz-transform: rotateY($angle);-ms-transform: rotateY($angle);transform: rotateY($angle);
 }
 
 @mixin rotate($angle){
-    -webkit-transform: rotate($angle); /* Chrome, Safari, Opera */
-    -moz-transform: rotate($angle); /* IE 9 */
-    -ms-transform: rotate($angle); /* IE 9 */
-    transform: rotate($angle);
+    -webkit-transform: rotate($angle);-moz-transform: rotate($angle);-ms-transform: rotate($angle);transform: rotate($angle);
 }
 
 @mixin perspective($value){
-    -webkit-perspective: $value; /* Chrome, Safari, Opera */
-    -moz-perspective: $value; /* IE 9 */
-    -ms-perspective: $value; /* IE 9 */
-    perspective: $value;
+    -webkit-perspective: $value;-moz-perspective: $value;-ms-perspective: $value;perspective: $value;
 }
 
 @mixin border-radius($radius){
-    -webkit-border-radius: $radius; /* Chrome, Safari, Opera */
-    -moz-border-radius: $radius; /* IE 9 */
-    -ms-border-radius: $radius; /* IE 9 */
-    border-radius: $radius;
+    -webkit-border-radius: $radius;-moz-border-radius: $radius;-ms-border-radius: $radius;border-radius: $radius;
 }
 
 @mixin transition{
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-ms-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;
 }
 
 @mixin animation{
-    -webkit-animation: fadeDown .25s ease .25s forwards;
-    -moz-animation: fadeDown .25s ease  .25s forwards;
-    -ms-animation: fadeDown .25s ease  .25s forwards;
-    -o-animation: fadeDown .25s ease  .25s forwards;
-    animation: fadeDown .25s ease  .25s forwards;
+    -webkit-animation: fadeDown .25s ease .25s forwards;-moz-animation: fadeDown .25s ease  .25s forwards;-ms-animation: fadeDown .25s ease  .25s forwards;-o-animation: fadeDown .25s ease  .25s forwards;animation: fadeDown .25s ease  .25s forwards;
+}
+
+@mixin grayfilter($percentage){
+	-webkit-filter: grayscale($percentage);-moz-filter: grayscale($percentage);-ms-filter: grayscale($percentage);-o-filter: grayscale($percentage);filter: grayscale($percentage);
 }
 
 .container-fluid,.row{
@@ -266,6 +247,9 @@ header{
 		position: absolute;
 		top:50%;
 		width: 32px;
+		&.disabled{
+			@include grayfilter(100%);
+		}
 	}
 	#backward{
 		left: 16.666666%;

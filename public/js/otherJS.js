@@ -107,11 +107,15 @@ define([
         worksPerPage = 2;
       }
       if (order == "backward"){
-        indexPage -= 1;
+        if(indexPage != 0){
+          indexPage -= 1;
+          uploadPage(worksPerPage,true);
+        }
       }else{
         indexPage += 1;
+        uploadPage(worksPerPage,true);
       }
-      uploadPage(worksPerPage);
+      
     });
     $( window ).resize(function() {
       //get width of HTML
@@ -120,15 +124,23 @@ define([
       if(documentWidth < 768 && resizeTrigger == 1){
         resizeTrigger = 0;
         indexPage = 0;
-        uploadPage(1);
+        $('#backward').addClass('disabled');
+        uploadPage(1,false);
       }
       if(documentWidth >= 768 && resizeTrigger == 0){
         resizeTrigger = 1;
         indexPage = 0;
-        uploadPage(2);
+        $('#backward').addClass('disabled');
+        uploadPage(2,false);
       }
     });
-    function uploadPage(worksPerPage){
+    function uploadPage(worksPerPage,notFirstTime){
+      if(notFirstTime){
+        $('#backward').removeClass('disabled');
+      }
+      if(indexPage == 0){
+        $('#backward').addClass('disabled');
+      }
       $('.work-article').removeClass('rigth-side left-side col-sm-offset-2 col-xs-offset-3');
       $('.work-article:nth-child(-n + ' + (indexPage*worksPerPage + worksPerPage) + ')').removeClass('hide');
       $('.work-article:nth-child(-n + ' + ((indexPage - 1)*worksPerPage + worksPerPage) + ')').addClass('hide');

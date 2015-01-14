@@ -22,6 +22,7 @@ define([
   					var listTemplate = _.template(workListTemplate)({works: works.models});
   					element.$el.html(listTemplate);
             var documentWidth = $(document).width();
+            $('#backward').addClass('disabled');
             $('.work-article:first-child').addClass('col-sm-offset-2 col-xs-offset-3');
             if(documentWidth <= 768){
               $('.work-article:nth-child(-n + 1)').removeClass('hide');

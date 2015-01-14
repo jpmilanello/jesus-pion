@@ -52,6 +52,10 @@ header {
         font-size: 20px;
         list-style: none;
         padding: 0 11px; }
+        header nav ul li:first-child {
+          width: 40px; }
+        header nav ul li.hidden {
+          width: 0; }
         header nav ul li a {
           color: #4CC393; }
         header nav ul li a:hover {
@@ -60,6 +64,7 @@ header {
   header.fixed {
     background: rgba(0, 0, 0, 0.5);
     height: 40px;
+    min-width: 390px;
     position: fixed; }
     header.fixed nav ul li a {
       color: #FFF; }

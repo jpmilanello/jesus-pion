@@ -78,28 +78,37 @@ header{
 			margin: 0;
 			padding: 0;
 			li{
+				display: inline-block;
+				font-size: 20px;
+				list-style: none;
+				padding: 0 11px;
+				&:first-child{
+					width: 40px;
+				}
+				&.hidden{
+					width: 0;
+				}
 				a{
 					color: $alternative-color;
 				}	
 				a:hover{
 					color: $alternative-color;
 					text-decoration: none;
-				}		
-				display: inline-block;
-				font-size: 20px;
-				list-style: none;
-				padding: 0 11px;
+				}	
 			}
 		}
 	}
 	&.fixed{
 		background: rgba(0,0,0,0.5);
 		height: 40px;
+		min-width: 390px;
 		position: fixed;
-		nav ul li a{
-			color: #FFF;
-			&.selected{
-				color: $alternative-color;
+		nav {
+			ul li a{
+				color: #FFF;
+				&.selected{
+					color: $alternative-color;
+				}
 			}
 		}
 	}

@@ -16,6 +16,10 @@
 		<textarea rows="4" cols="50" name="workText"><%= work ? work.get('workText') : '' %></textarea>
 	</p>
 	<p>
+		<label>Description (translate spanish)</label>
+		<textarea rows="4" cols="50" name="workTextTranslate"><%= work ? work.get('workTextTranslate') : '' %></textarea>
+	</p>
+	<p>
 		<label>Tags</label>
 		<input type="text" name="workTags" value="<%= work ? work.get('workTags') : '' %>"/>
 	</p>

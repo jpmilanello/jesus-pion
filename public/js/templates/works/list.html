@@ -6,6 +6,7 @@
 			<th>title</th> 
 			<th>Image (URL)</th> 
 			<th>Decription</th> 
+			<th>Decription (translate spanish)</th> 
 			<th>tags</th> 
 			<th></th> 
 		</tr> 
@@ -18,6 +19,7 @@
 				<td><%= work.get('workTitle') %></td>
 				<td><img src="<%= path %>" height="100px"></td>
 				<td><%= work.get('workText') %></td>
+				<td><%= work.get('workTextTranslate') %></td>
 				<td><%= work.get('workTags') %></td>
 				<td><a href="#/work/edit/<%= work.id %>" class="btn">Edit</a></td>
 			</tr>

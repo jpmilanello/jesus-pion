@@ -105,12 +105,20 @@ define([
       }
       if (order == "backward"){
         if(indexPage != 0){
+          $('#forward').removeClass('disabled');
           indexPage -= 1;
           uploadPage(worksPerPage,true);
         }
       }else{
-        indexPage += 1;
-        uploadPage(worksPerPage,true);
+        if(indexPage < Math.ceil($(".work-article").length/worksPerPage) - 1){
+          indexPage += 1;
+          console.log("indexPage =" + indexPage);
+          uploadPage(worksPerPage,true);
+          console.log(parseInt($(".work-article").length/worksPerPage));
+          if(indexPage == Math.ceil($(".work-article").length/worksPerPage) - 1){
+            $('#forward').addClass('disabled');
+          }
+        }
       }
       
     });
@@ -122,12 +130,14 @@ define([
         resizeTrigger = 0;
         indexPage = 0;
         $('#backward').addClass('disabled');
+        $('#forward').removeClass('disabled');
         uploadPage(1,false);
       }
       if(documentWidth >= 768 && resizeTrigger == 0){
         resizeTrigger = 1;
         indexPage = 0;
         $('#backward').addClass('disabled');
+        $('#forward').removeClass('disabled');
         uploadPage(2,false);
       }
     });

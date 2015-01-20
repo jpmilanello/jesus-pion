@@ -180,51 +180,19 @@ header{
 
 #section-works{
 	height: 380px;
-	position: relative;
 	width: 100%;
-	article{
-		@include translate(0,-50%);
-		margin-top: 10px;
-		position: absolute;
-		top: 50%;
+	.list-works-wrapper{
+		position: relative;
 		width: 100%;
-		p{
-			@include translate(-50%,0);
-			color: $secundary-color;
-			font-size: 18px;
-			left: 50%;
-			position: relative;	
-			text-align: center;
-		}
-		p.tags{
-			color: $primary-color;
-		}
-		.circle{
-			position: relative;	
-			height: 150px;
-			overflow: hidden;
-			img{
-				@include translate(-50%,0);
-				height: 150px;
-				left: 50%;
-				position: absolute;
-			}
-		}
-	}
-	p.article-title{
-		color: $alternative-color;
-		font-size: 30px;
-		left: 20px;
-		position: absolute;
-		top: 20px;
 	}
 	.list-works{
-		overflow: hidden;
 		height: 380px;
-		/*padding-left: 33.333333%;*/
+		margin-top: 10px;
+		overflow: hidden;
 		position: relative;
+		top: 50%;
+		width: 100%;
 		@include perspective(4000px);
-
 		.work-article{
 			@include transition;
 			display: inline-block;
@@ -249,7 +217,36 @@ header{
 				right: -100px;
 				top: 20px;
 			}
+			p{
+				@include translate(-50%,0);
+				color: $secundary-color;
+				font-size: 18px;
+				left: 50%;
+				position: relative;	
+				text-align: center;
+				&.tags{
+					color: $primary-color;
+				}
+			}
+			.circle{
+				position: relative;	
+				height: 150px;
+				overflow: hidden;
+				img{
+					@include translate(-50%,0);
+					height: 150px;
+					left: 50%;
+					position: absolute;
+				}
+			}
 		}
+	}
+	p.article-title{
+		color: $alternative-color;
+		font-size: 30px;
+		left: 20px;
+		position: absolute;
+		top: 20px;
 	}
 	.works-nav{
 		cursor: pointer;
@@ -266,6 +263,34 @@ header{
 	#forward{
 		@include rotate(180deg);
 		right: 16.66666%;
+	}
+	.bigImage{
+		background: rgba($secundary-color,0.8);
+		height: calc(100% - 20px);
+		left: 10px;
+		padding: 10px;
+		position: fixed;
+		top: 10px;
+		width: calc(100% - 20px);
+		z-index: 5;
+		&.hide{
+			display: none;
+		}
+		.mainImg{
+			@include translate(-50%,-50%);
+			left: 50%;
+			max-width: 100%;
+    		max-height: 100%;
+    		position: relative;
+    		top: 50%;  
+		}
+		.close-img{
+			width: 32px;
+			position: absolute;
+			right: 18px;
+			top: 18px;
+			z-index: 10;
+		}		
 	}
 }
 

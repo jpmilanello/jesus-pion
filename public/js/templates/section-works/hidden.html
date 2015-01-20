@@ -1,0 +1,6 @@
+<%  _.each(works, function(work){
+	complex_id = ("000000000" + work.get('id')).substr(-9,9);
+	path = 'https://s3.amazonaws.com/personalpagejpmilanello/works/images/' + complex_id.substr(0,3) + '/' + complex_id.substr(3,3) + '/' + complex_id.substr(6,3) + '/original/' + work.get('image_file_name');
+	%>
+	<div class="bigImage hide" id="BI<%= work.get('id') %>"><img class="mainImg" src="<%= path %>"><img class="close-img" src="img/close-icon.png"></div>
+<% }) %>

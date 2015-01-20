@@ -6,7 +6,7 @@
 		<p class="en"><strong><%= work.get('workTitle') %></strong> <%= work.get('workText') %></p>
 		<p class="sp"><strong><%= work.get('workTitle') %></strong> <%= work.get('workTextTranslate') %></p>
 		<div class="circle">
-			<img src="<%= path %>">
+			<img class="smallImg" src="<%= path %>" id="img<%= work.get('id') %>">
 		</div>
 		<p class="tags"><%= work.get('workTags') %></p>
 	</div>
